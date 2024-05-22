@@ -1,0 +1,66 @@
+<form method="post">
+    <table>
+        <tr>
+            <td>Roll no:</td>
+            <td><input type="text" name="rollno"></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>Sub1:</td>
+            <td><input type="text" name="sub1"></td>
+        </tr>
+        <tr>
+            <td>Sub2:</td>
+            <td><input type="text" name="sub2"></td>
+        </tr>
+        <tr>
+            <td>Sub3:</td>
+            <td><input type="text" name="sub3"></td>
+        </tr>
+        
+       
+        
+        <tr>
+            <td></td>
+            <td><input type="submit" name="save"></td>
+        </tr>
+        
+    </table>
+</form>
+<table border="">
+    <th>Id</th>
+    <th>Rollno</th>
+    <th>Name</th>
+    <th>Sub1</th>
+    <th>Sub2</th>
+    <th>Sub3</th>
+    <th>total</th>
+    <th>per</th>
+    <th>min</th>
+    <th>max</th>
+    
+    <th>Resl</th>
+    <th>Delete</th>
+    <th>Update</th>
+    <% result.forEach(function(user){%>
+        <tr>
+            <td><%= user.id %></td>
+            <td><%= user.rollno %></td>
+            <td><%= user.name %></td>
+            <td><%= user.sub1 %></td>
+            <td><%= user.sub2 %></td>
+            <td><%= user.sub3 %></td>
+            <td><%= user.total %></td>
+            <td><%= user.per %></td>
+            <td><%= user.min %></td>
+            <td><%= user.max %></td>
+            
+            <td><%= user.resl %></td>
+            <td><a href="delete/<%=user.id%>">Delete</a></td>
+            <td><a href="update/<%=user.id%>">Update</a></td>
+        </tr>
+    <% });%>
+</table>
